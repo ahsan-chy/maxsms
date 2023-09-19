@@ -68,10 +68,10 @@
 }
 
 .accordionContent {
-    opacity: 0;
-    transition: .2s;
-    transition-timing-function: ease-in-out;
-    height: 0px;
+  opacity: 0;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  height: 0px;
 }
 
 .accordionContent.show {
@@ -83,7 +83,7 @@
 
 .contentWrapper {
   display: inline-block;
-  width: 70%;
+  width: 55%;
 }
 
 .setupSubTitle {
@@ -121,8 +121,13 @@
   width: 80px;
 }
 
-.number {
+.selectTitle {
   width: 120px;
+  height: 30px;
+  padding: 0 6px;
+  border: 1px solid #d1d1d1;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .status {
@@ -133,6 +138,7 @@
   background-color: #f8e6d2;
   width: 70px;
   text-align: center !important;
+  cursor: pointer;
 }
 .invite h3 {
   margin: auto;
@@ -153,6 +159,7 @@ button {
   font-size: 0.8rem;
   font-weight: 600;
   margin-left: 40px;
+  cursor: pointer;
 }
 
 .sendSms {

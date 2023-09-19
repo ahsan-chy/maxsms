@@ -26,6 +26,10 @@ const CustomerInfo = () => {
       lastDate: "Last Date/Time Invite Sent",
     },
   ];
+  const [subTitle, setSubTitle] = useState("");
+  const [language, setLanguage] = useState("");
+  const [promotion, setPromotion] = useState("");
+  const [troubleShoot, setTroubleShoot] = useState("");
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
   const [selectedDetailCommunication, setSelectedDetailCommunication] = useState(setupData[0].id);
   const [selectedCommunication, setSelectedCommunication] = useState(setupData[0].id);
@@ -57,8 +61,13 @@ const CustomerInfo = () => {
               <h3 className={styles.subTitle}>Order ID: </h3>
             </div>
             <div className={`${styles.selectOption} ${styles.languageSelect}`}>
-              <select>
-                <option value="0">Language</option>
+              <select
+                name="language"
+                onChange={(e) => setLanguage(e.target.value)}
+                defaultValue={"language"}>
+                <option value="language" disabled>
+                  Language
+                </option>
                 <option value="0">Spanish</option>
                 <option value="0">English</option>
               </select>
@@ -103,9 +112,17 @@ const CustomerInfo = () => {
                   </div>
                   {selectedDetailCommunication === data.id && (
                     <>
-                      <div className={`${styles.inlineBox} ${styles.number}`}>
-                        <h3 className={styles.subTitle}>{data.subTitle}: </h3>
+                      <div>
+                        {/* <h3 className={styles.subTitle}>{data.subTitle}: </h3> */}
+                        <input
+                          type="text"
+                          value={subTitle}
+                          onChange={(e) => setSubTitle(e.target.value)}
+                          placeholder={data.subTitle}
+                          className={`${styles.selectTitle}`}
+                        />
                       </div>
+
                       <div className={`${styles.inlineBox} ${styles.status}`}>
                         <h3 className={styles.subTitle}> {data.status} </h3>
                       </div>
@@ -132,17 +149,27 @@ const CustomerInfo = () => {
           <div className={`${styles.col} `}>
             <h3 className={styles.title}>Send Message</h3>
             <div className={styles.selectOption}>
-              <select>
-                <option value="0">Promotions</option>
-                <option value="0">Promotions</option>
-                <option value="0">Promotions</option>
+              <select
+                name="promotion"
+                onChange={(e) => setPromotion(e.target.value)}
+                defaultValue={"promotion"}>
+                <option value="promotion" disabled>
+                  Promotions
+                </option>
+                <option value="1">option 1</option>
+                <option value="2">option 2</option>
               </select>
             </div>
             <div className={styles.selectOption}>
-              <select>
-                <option value="1">TroubleShoot</option>
-                <option value="1">TroubleShoot</option>
-                <option value="1">TroubleShoot</option>
+              <select
+                name="troubleShoot"
+                onChange={(e) => setTroubleShoot(e.target.value)}
+                defaultValue={"troubleShoot"}>
+                <option value="troubleShoot" disabled>
+                  TroubleShoot
+                </option>
+                <option value="1">TroubleShoot 1</option>
+                <option value="2">TroubleShoot 2</option>
               </select>
             </div>
           </div>
@@ -152,9 +179,8 @@ const CustomerInfo = () => {
               name="customMessage"
               className={styles.customMessage}
               rows="8"
-              cols="40">
-              Custom Message
-            </textarea>
+              cols="40"
+              placeholder="Custom Message"></textarea>
           </div>
           <div className={`${styles.col} `}>
             <div className={`${styles.optionWrapperBox} `}>

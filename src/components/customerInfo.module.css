@@ -68,11 +68,22 @@
 }
 
 .accordionContent {
+    opacity: 0;
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+    height: 0px;
+}
+
+.accordionContent.show {
+  opacity: 1;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+  height: auto;
 }
 
 .contentWrapper {
   display: inline-block;
-  width: 55%;
+  width: 70%;
 }
 
 .setupSubTitle {

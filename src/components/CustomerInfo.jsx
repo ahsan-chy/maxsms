@@ -27,6 +27,16 @@ const CustomerInfo = () => {
     },
   ];
   const [isAccordionOpen, setIsAccordionOpen] = useState(true);
+  const [selectedDetailCommunication, setSelectedDetailCommunication] = useState(setupData[0].id);
+  const [selectedCommunication, setSelectedCommunication] = useState(setupData[0].id);
+
+  const handleDetailRadioChange = (id) => {
+    setSelectedDetailCommunication(id);
+  };
+
+  const handleRadioChange = (id) => {
+    setSelectedCommunication(id);
+  };
 
   const hideAccordion = () => {
     setIsAccordionOpen(!isAccordionOpen);
@@ -69,8 +79,7 @@ const CustomerInfo = () => {
             </span>
             <h3 className={styles.setupTitle}>SETUP</h3>
           </div>
-          {isAccordionOpen && ( 
-          <div className={styles.accordionContent}>
+          <div className={`${styles.accordionContent} ${isAccordionOpen ? styles.show : ""}`}>
             <div className={styles.contentWrapper}>
               <h3 className={`${styles.setupSubTitle} ${styles.firstTitle}`}>
                 Preferred Communication
@@ -79,25 +88,35 @@ const CustomerInfo = () => {
               <h3 className={`${styles.setupSubTitle} ${styles.thirdTitle}`}>Last Invite Date</h3>
               {setupData.map((data, index) => (
                 <div className={styles.OptionWrapper} key={index}>
-                  <input type="radio" id="sms" name="communication" />
+                  <input
+                    type="radio"
+                    id={`communication-${data.id}`}
+                    name="detail-communication"
+                    checked={selectedDetailCommunication === data.id}
+                    onChange={() => handleDetailRadioChange(data.id)}
+                  />
 
                   <div className={`${styles.inlineBox} ${styles.sms}`}>
                     <h3 className={styles.subTitle} htmlFor="sms">
                       {data.title}:{" "}
                     </h3>
                   </div>
-                  <div className={`${styles.inlineBox} ${styles.number}`}>
-                    <h3 className={styles.subTitle}>{data.subTitle}: </h3>
-                  </div>
-                  <div className={`${styles.inlineBox} ${styles.status}`}>
-                    <h3 className={styles.subTitle}> {data.status} </h3>
-                  </div>
-                  <div className={`${styles.inlineBox} ${styles.invite}`}>
-                    <h3 className={styles.subTitle}>Invite </h3>
-                  </div>
-                  <div className={`${styles.inlineBox} ${styles.lastDate} `}>
-                    <h3 className={styles.subTitle}>{data.lastDate} </h3>
-                  </div>
+                  {selectedDetailCommunication === data.id && (
+                    <>
+                      <div className={`${styles.inlineBox} ${styles.number}`}>
+                        <h3 className={styles.subTitle}>{data.subTitle}: </h3>
+                      </div>
+                      <div className={`${styles.inlineBox} ${styles.status}`}>
+                        <h3 className={styles.subTitle}> {data.status} </h3>
+                      </div>
+                      <div className={`${styles.inlineBox} ${styles.invite}`}>
+                        <h3 className={styles.subTitle}>Invite </h3>
+                      </div>
+                      <div className={`${styles.inlineBox} ${styles.lastDate} `}>
+                        <h3 className={styles.subTitle}>{data.lastDate} </h3>
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
 
@@ -105,7 +124,6 @@ const CustomerInfo = () => {
             </div>
             <button>SAVE</button>
           </div>
-          )}
         </div>
 
         <div className={styles.divider} />
@@ -142,7 +160,13 @@ const CustomerInfo = () => {
             <div className={`${styles.optionWrapperBox} `}>
               {setupData.map((data, index) => (
                 <div className={styles.OptionWrapper} key={index}>
-                  <input type="radio" id="sms" name="communication" />
+                  <input
+                    type="radio"
+                    id={`communication-${data.id}`}
+                    name="communication"
+                    checked={selectedCommunication === data.id}
+                    onChange={() => handleRadioChange(data.id)}
+                  />
 
                   <div className={`${styles.inlineBox} ${styles.sms}`}>
                     <h3 className={styles.subTitle} htmlFor="sms">

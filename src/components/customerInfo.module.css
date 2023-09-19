@@ -83,7 +83,8 @@
 
 .contentWrapper {
   display: inline-block;
-  width: 55%;
+  margin-right: 92px;
+
 }
 
 .setupSubTitle {
@@ -104,8 +105,9 @@
 
 .OptionWrapper {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  height: 30px;
+  height: auto;
   gap: 10px;
   margin-bottom: 15px;
 }
@@ -147,7 +149,9 @@
 .lastDate {
   width: 250px;
 }
-
+.saveBtn{
+    display: inline;
+}
 button {
   background-color: #69a84f;
   border: none;
@@ -165,6 +169,7 @@ button {
 .sendSms {
   display: flex;
   gap: 37px;
+  flex-wrap: wrap;
 }
 
 .selectOption {

@@ -139,7 +139,10 @@ const CustomerInfo = () => {
 
               <br />
             </div>
-            <button>SAVE</button>
+
+            <div className={styles.saveBtn}>
+              <button>SAVE</button>
+            </div>
           </div>
         </div>
 

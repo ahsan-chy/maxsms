@@ -209,6 +209,13 @@ button {
   display: none;
 }
 
+.mobileFirstTitle {
+  display: none;
+}
+.mobileSecondTitle {
+  display: none;
+}
+
 @media only screen and (max-width: 880px) {
   .contentWrapper {
     margin-right: 0px !important;
@@ -245,6 +252,15 @@ button {
     display: none;
   }
 
+  .mobileSecondTitle {
+    display: block;
+  }
+
+  .mobileFirstTitle {
+    display: block;
+    width: 100%;
+  }
+
   .col {
     width: 100%;
   }
@@ -264,7 +280,8 @@ button {
     width: 100%;
   }
   .thirdTitlee {
-    display: none;
+    display: block;
+    margin-left: 0;
   }
   .status {
     width: 100%;

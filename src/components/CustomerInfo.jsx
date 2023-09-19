@@ -97,6 +97,9 @@ const CustomerInfo = () => {
               <h3 className={`${styles.setupSubTitle} ${styles.thirdTitle}`}>Last Invite Date</h3>
               {setupData.map((data, index) => (
                 <div className={styles.OptionWrapper} key={index}>
+                  <h3 className={`${styles.setupSubTitle} ${styles.mobileFirstTitle}`}>
+                    Preferred Communication
+                  </h3>
                   <input
                     type="radio"
                     id={`communication-${data.id}`}
@@ -121,6 +124,10 @@ const CustomerInfo = () => {
                           className={`${styles.selectTitle}`}
                         />
                       </div>
+
+                      <h3 className={`${styles.setupSubTitle} ${styles.mobileSecondTitle}`}>
+                        Status
+                      </h3>
 
                       <div className={`${styles.inlineBox} ${styles.status}`}>
                         <h3 className={`${styles.subTitle}`}> {data.status} </h3>

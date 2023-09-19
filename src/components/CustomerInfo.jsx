@@ -53,7 +53,7 @@ const CustomerInfo = () => {
         <div className={styles.customerInfo}>
           <h3 className={styles.title}>Customer Information</h3>
 
-          <div className={styles.boxWrapper}>
+          <div className={`${styles.boxWrapper}`}>
             <div className={styles.box}>
               <h3 className={styles.subTitle}>Name: </h3>
             </div>
@@ -112,8 +112,7 @@ const CustomerInfo = () => {
                   </div>
                   {selectedDetailCommunication === data.id && (
                     <>
-                      <div>
-                        {/* <h3 className={styles.subTitle}>{data.subTitle}: </h3> */}
+                      <div className={styles.inputRadio}>
                         <input
                           type="text"
                           value={subTitle}
@@ -124,11 +123,15 @@ const CustomerInfo = () => {
                       </div>
 
                       <div className={`${styles.inlineBox} ${styles.status}`}>
-                        <h3 className={styles.subTitle}> {data.status} </h3>
+                        <h3 className={`${styles.subTitle}`}> {data.status} </h3>
                       </div>
                       <div className={`${styles.inlineBox} ${styles.invite}`}>
                         <h3 className={styles.subTitle}>Invite </h3>
                       </div>
+                      <h3 className={`${styles.setupSubTitle} ${styles.thirdTitlee}`}>
+                        Last Invite Date
+                      </h3>
+
                       <div className={`${styles.inlineBox} ${styles.lastDate} `}>
                         <h3 className={styles.subTitle}>{data.lastDate} </h3>
                       </div>

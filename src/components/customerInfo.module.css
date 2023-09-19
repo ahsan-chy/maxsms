@@ -84,7 +84,6 @@
 .contentWrapper {
   display: inline-block;
   margin-right: 92px;
-
 }
 
 .setupSubTitle {
@@ -149,8 +148,8 @@
 .lastDate {
   width: 250px;
 }
-.saveBtn{
-    display: inline;
+.saveBtn {
+  display: inline;
 }
 button {
   background-color: #69a84f;
@@ -205,4 +204,82 @@ button {
 .submitCol {
   display: flex;
   align-items: flex-end;
+}
+.thirdTitlee {
+  display: none;
+}
+
+@media only screen and (max-width: 880px) {
+  .contentWrapper {
+    margin-right: 0px !important;
+  }
+  .boxWrapper {
+    gap: 10px !important;
+  }
+  .thirdTitle {
+    margin-left: 128px;
+  }
+  .thirdTitlee {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .thirdTitle {
+    display: none;
+  }
+  .thirdTitlee {
+    display: block;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .boxWrapper {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .languageSelect {
+    margin-bottom: 0px;
+  }
+  .firstTitle {
+    display: none;
+  }
+
+  .col {
+    width: 100%;
+  }
+  .selectOption select {
+    width: 100%;
+  }
+  .secondTitle {
+    display: none;
+  }
+  button {
+    margin-left: 0;
+  }
+  .sms {
+    width: 100%;
+  }
+  .customMessage {
+    width: 100%;
+  }
+  .thirdTitlee {
+    display: none;
+  }
+  .status {
+    width: 100%;
+  }
+
+  .invite {
+    width: 100%;
+  }
+  .lastDate {
+    width: 100%;
+  }
+  .selectTitle {
+    width: 100%;
+  }
+  .inputRadio {
+    width: 96%;
+  }
 }
